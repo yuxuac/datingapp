@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-primary" (click)="openModal(template)">Register</button>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Register</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="text-center border border-light p-5" #loginForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+
+      <p class="h4 mb-4">Sign up</p>
+
+      <input type="text" name="username" [(ngModel)]="model.username" class="form-control mb-4" placeholder="Username" />
+
+      <input type="text" name="email" [(ngModel)]="model.email" class="form-control mb-4" placeholder="E-mail" />
+      <!-- <small id="defaultRegisterFormEmailHelpBlock" class="form-text text-muted mb-4">
+        Optional - for additional login
+      </small> -->
+
+      <input type="password" name="password" [(ngModel)]="model.password" class="form-control mb-4" placeholder="Password" />
+      <input type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" class="form-control mb-4" placeholder="Retype Password" />
+
+      <button color="info" block="true" class="btn btn-info btn-block" type="submit">Sign up</button>
+    </form>
+  </div>
+</ng-template>
