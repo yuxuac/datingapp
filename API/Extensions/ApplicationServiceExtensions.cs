@@ -18,8 +18,8 @@ namespace API.Extensions
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options =>
             {
-                //options.UseSqlite(this._config.GetConnectionString("Sqlite"));
-                options.UseSqlServer(config.GetConnectionString("SqlServer"));
+                options.UseSqlite(config.GetConnectionString("Sqlite"));
+                //options.UseSqlServer(config.GetConnectionString("SqlServer"));
             });
             return services;
         }
